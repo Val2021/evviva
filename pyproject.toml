@@ -1,0 +1,28 @@
+[project]
+name = "evviva"
+version = "0.1.0"
+description = "MVP RAG backend for querying mocked WhatsApp, email, and PDF data using FastAPI, Qdrant, Docker, and LLMs."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.34.0",
+    "pydantic>=2.10.0",
+    "pydantic-settings>=2.7.0",
+    "python-dotenv>=1.0.1",
+    "qdrant-client[fastembed]>=1.13.0",
+    "fastembed>=0.6.0",
+    "groq>=0.18.0",
+    "instructor>=1.7.0",
+    "pypdf>=5.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.9.0",
+    "pytest>=8.3.0",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py313"
