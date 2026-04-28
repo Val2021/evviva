@@ -1,0 +1,500 @@
+[
+  {
+    "document_id": "email_msg_001",
+    "email_id": "email.mock_mariana_001",
+    "thread_id": "email_thread_mariana_001",
+    "source": "email",
+    "channel": "email",
+    "direction": "inbound",
+    "contact_name": "Mariana Costa",
+    "contact_email": "mariana.costa@example.com",
+    "sender_type": "customer",
+    "sender_name": "Mariana Costa",
+    "sender_email": "mariana.costa@example.com",
+    "receiver_type": "business",
+    "receiver_name": "Evviva Support",
+    "receiver_email": "support@evviva.com",
+    "cc": [
+      {
+        "name": "Fernanda Costa",
+        "email": "fernanda.costa@example.com",
+        "role": "family_contact"
+      }
+    ],
+    "bcc": [],
+    "timestamp": "2026-04-23T18:36:00-03:00",
+    "subject": "Documents submission - case 001",
+    "body": "Good afternoon. As requested during our previous conversation, I am sending the signed contract, the updated proof of address, and a copy of my ID document. I am copying Fernanda because she is helping me organize the required documents. Please confirm whether all attachments were received correctly and whether the documentation can proceed to internal review.",
+    "attachments": [
+      {
+        "file_name": "signed_contract_mariana.pdf",
+        "file_type": "pdf",
+        "description": "Digitally signed contract"
+      },
+      {
+        "file_name": "proof_of_address_mariana.pdf",
+        "file_type": "pdf",
+        "description": "Proof of address"
+      },
+      {
+        "file_name": "id_document_mariana.pdf",
+        "file_type": "pdf",
+        "description": "ID document copy"
+      }
+    ]
+  },
+  {
+    "document_id": "email_msg_002",
+    "email_id": "email.mock_mariana_002",
+    "thread_id": "email_thread_mariana_001",
+    "source": "email",
+    "channel": "email",
+    "direction": "outbound",
+    "contact_name": "Mariana Costa",
+    "contact_email": "mariana.costa@example.com",
+    "sender_type": "business",
+    "sender_name": "Evviva Support",
+    "sender_email": "support@evviva.com",
+    "receiver_type": "customer",
+    "receiver_name": "Mariana Costa",
+    "receiver_email": "mariana.costa@example.com",
+    "cc": [
+      {
+        "name": "Document Review Team",
+        "email": "documents@evviva.com",
+        "role": "internal_review_team"
+      }
+    ],
+    "bcc": [],
+    "timestamp": "2026-04-24T09:46:00-03:00",
+    "subject": "Partial confirmation of receipt - case 001",
+    "body": "Hello, Mariana. We confirm receipt of your email sent on April 23 at 6:36 PM. The digitally signed contract and the ID document were received correctly. However, the proof of address has low resolution, and some information is not fully readable. We are copying the document review team so they can track the pending replacement. Please resend the proof of address in better quality, preferably as a PDF file.",
+    "attachments": []
+  },
+  {
+    "document_id": "email_msg_003",
+    "email_id": "email.mock_mariana_003",
+    "thread_id": "email_thread_mariana_001",
+    "source": "email",
+    "channel": "email",
+    "direction": "inbound",
+    "contact_name": "Mariana Costa",
+    "contact_email": "mariana.costa@example.com",
+    "sender_type": "customer",
+    "sender_name": "Mariana Costa",
+    "sender_email": "mariana.costa@example.com",
+    "receiver_type": "business",
+    "receiver_name": "Evviva Support",
+    "receiver_email": "support@evviva.com",
+    "cc": [
+      {
+        "name": "Paulo Costa",
+        "email": "paulo.costa@example.com",
+        "role": "secondary_contact"
+      }
+    ],
+    "bcc": [],
+    "timestamp": "2026-04-24T10:20:00-03:00",
+    "subject": "Resubmission of proof of address - case 001",
+    "body": "Hello. I am resending the proof of address in better quality, as requested. Paulo is copied because he has access to the original utility account and can provide additional documentation if needed. The document is an internet bill issued this month, under my name, and it shows my full address. Please confirm whether this file is now readable and whether the documentation can continue to internal review.",
+    "attachments": [
+      {
+        "file_name": "proof_of_address_mariana_resubmitted.pdf",
+        "file_type": "pdf",
+        "description": "Resubmitted proof of address in better quality"
+      }
+    ]
+  },
+  {
+    "document_id": "email_msg_004",
+    "email_id": "email.mock_mariana_004",
+    "thread_id": "email_thread_mariana_001",
+    "source": "email",
+    "channel": "email",
+    "direction": "outbound",
+    "contact_name": "Mariana Costa",
+    "contact_email": "mariana.costa@example.com",
+    "sender_type": "business",
+    "sender_name": "Evviva Support",
+    "sender_email": "support@evviva.com",
+    "receiver_type": "customer",
+    "receiver_name": "Mariana Costa",
+    "receiver_email": "mariana.costa@example.com",
+    "cc": [
+      {
+        "name": "Case Operations",
+        "email": "case.operations@evviva.com",
+        "role": "operations_team"
+      }
+    ],
+    "bcc": [],
+    "timestamp": "2026-04-24T10:41:00-03:00",
+    "subject": "Documentation received - case 001",
+    "body": "Hello, Mariana. We confirm receipt of the new proof of address. The file is readable and meets the initial requirements. Your required documentation has been registered under case 001 and will now proceed to internal review. Case Operations is copied for tracking. The estimated response time is up to two business days.",
+    "attachments": []
+  },
+  {
+    "document_id": "email_msg_005",
+    "email_id": "email.mock_joao_001",
+    "thread_id": "email_thread_joao_001",
+    "source": "email",
+    "channel": "email",
+    "direction": "inbound",
+    "contact_name": "João Silva",
+    "contact_email": "joao.silva@example.com",
+    "sender_type": "customer",
+    "sender_name": "João Silva",
+    "sender_email": "joao.silva@example.com",
+    "receiver_type": "business",
+    "receiver_name": "Evviva Support",
+    "receiver_email": "support@evviva.com",
+    "cc": [
+      {
+        "name": "Luciana Almeida",
+        "email": "luciana.almeida@example.com",
+        "role": "administrative_assistant"
+      }
+    ],
+    "bcc": [],
+    "timestamp": "2026-04-24T10:38:00-03:00",
+    "subject": "Address update request",
+    "body": "Hello. I recently moved and need to update my registered address before new documents are issued. I am copying Luciana, who helps me with administrative matters. As instructed on WhatsApp, I am sending a recent electricity bill under my name with my new full address. Please confirm whether this document is enough to proceed with the cadastral update.",
+    "attachments": [
+      {
+        "file_name": "electricity_bill_joao_new_address.pdf",
+        "file_type": "pdf",
+        "description": "Electricity bill with new address"
+      }
+    ]
+  },
+  {
+    "document_id": "email_msg_006",
+    "email_id": "email.mock_joao_002",
+    "thread_id": "email_thread_joao_001",
+    "source": "email",
+    "channel": "email",
+    "direction": "outbound",
+    "contact_name": "João Silva",
+    "contact_email": "joao.silva@example.com",
+    "sender_type": "business",
+    "sender_name": "Evviva Support",
+    "sender_email": "support@evviva.com",
+    "receiver_type": "customer",
+    "receiver_name": "João Silva",
+    "receiver_email": "joao.silva@example.com",
+    "cc": [
+      {
+        "name": "Customer Records Team",
+        "email": "records@evviva.com",
+        "role": "internal_records_team"
+      }
+    ],
+    "bcc": [],
+    "timestamp": "2026-04-24T11:03:00-03:00",
+    "subject": "Address update document received",
+    "body": "Hello, João. We confirm receipt of your proof of address. The document will be reviewed by the team responsible for cadastral updates. Customer Records is copied so they can validate the address change. If everything is correct, the address update should be completed within three business days. If any issue is found, we will contact you by email and WhatsApp.",
+    "attachments": []
+  },
+  {
+    "document_id": "email_msg_007",
+    "email_id": "email.mock_joao_003",
+    "thread_id": "email_thread_joao_001",
+    "source": "email",
+    "channel": "email",
+    "direction": "inbound",
+    "contact_name": "João Silva",
+    "contact_email": "joao.silva@example.com",
+    "sender_type": "customer",
+    "sender_name": "João Silva",
+    "sender_email": "joao.silva@example.com",
+    "receiver_type": "business",
+    "receiver_name": "Evviva Support",
+    "receiver_email": "support@evviva.com",
+    "cc": [
+      {
+        "name": "Roberto Silva",
+        "email": "roberto.silva@example.com",
+        "role": "business_partner"
+      }
+    ],
+    "bcc": [],
+    "timestamp": "2026-04-24T11:18:00-03:00",
+    "subject": "Re: Address update document received",
+    "body": "Thank you for confirming. I am copying Roberto because the next document will also be used by his team. Please let me know if the electricity bill is accepted. I need the address update to be completed before the end of the week, because the next document must be issued with the new address.",
+    "attachments": []
+  },
+  {
+    "document_id": "email_msg_008",
+    "email_id": "email.mock_joao_004",
+    "thread_id": "email_thread_joao_001",
+    "source": "email",
+    "channel": "email",
+    "direction": "outbound",
+    "contact_name": "João Silva",
+    "contact_email": "joao.silva@example.com",
+    "sender_type": "business",
+    "sender_name": "Evviva Support",
+    "sender_email": "support@evviva.com",
+    "receiver_type": "customer",
+    "receiver_name": "João Silva",
+    "receiver_email": "joao.silva@example.com",
+    "cc": [
+      {
+        "name": "Address Validation",
+        "email": "address.validation@evviva.com",
+        "role": "internal_validation_team"
+      }
+    ],
+    "bcc": [],
+    "timestamp": "2026-04-24T11:42:00-03:00",
+    "subject": "Re: Address update document received",
+    "body": "João, the electricity bill was accepted as valid proof of address. Your cadastral update has been approved and is now scheduled for completion. Address Validation is copied for record keeping. The expected completion date is April 27, 2026. You will receive a final confirmation once the update is applied.",
+    "attachments": []
+  },
+  {
+    "document_id": "email_msg_009",
+    "email_id": "email.mock_ana_001",
+    "thread_id": "email_thread_ana_001",
+    "source": "email",
+    "channel": "email",
+    "direction": "inbound",
+    "contact_name": "Ana Ribeiro",
+    "contact_email": "ana.ribeiro@example.com",
+    "sender_type": "customer",
+    "sender_name": "Ana Ribeiro",
+    "sender_email": "ana.ribeiro@example.com",
+    "receiver_type": "business",
+    "receiver_name": "Evviva Support",
+    "receiver_email": "support@evviva.com",
+    "cc": [
+      {
+        "name": "Marcelo Ribeiro",
+        "email": "marcelo.ribeiro@example.com",
+        "role": "financial_contact"
+      }
+    ],
+    "bcc": [],
+    "timestamp": "2026-04-18T16:22:00-03:00",
+    "subject": "Duplicate charge - urgent review",
+    "body": "Hello. I noticed a duplicated charge on my statement for the same service. I am copying Marcelo because he also monitors these payments. I am attaching the payment receipt and a screenshot showing both charges. Please review this urgently and let me know whether a refund request can be opened.",
+    "attachments": [
+      {
+        "file_name": "payment_receipt_ana.pdf",
+        "file_type": "pdf",
+        "description": "Payment receipt"
+      },
+      {
+        "file_name": "duplicated_charge_screenshot_ana.png",
+        "file_type": "image",
+        "description": "Screenshot showing duplicated charge"
+      }
+    ]
+  },
+  {
+    "document_id": "email_msg_010",
+    "email_id": "email.mock_ana_002",
+    "thread_id": "email_thread_ana_001",
+    "source": "email",
+    "channel": "email",
+    "direction": "outbound",
+    "contact_name": "Ana Ribeiro",
+    "contact_email": "ana.ribeiro@example.com",
+    "sender_type": "business",
+    "sender_name": "Evviva Support",
+    "sender_email": "support@evviva.com",
+    "receiver_type": "customer",
+    "receiver_name": "Ana Ribeiro",
+    "receiver_email": "ana.ribeiro@example.com",
+    "cc": [
+      {
+        "name": "Finance Review",
+        "email": "finance.review@evviva.com",
+        "role": "internal_finance_team"
+      }
+    ],
+    "bcc": [],
+    "timestamp": "2026-04-24T11:31:00-03:00",
+    "subject": "Duplicate charge review opened",
+    "body": "Hello, Ana. We located your previous email and confirmed that the payment receipt and screenshot were received. A review request has now been opened for the possible duplicate charge. Your protocol number is EVV-2026-00087. Finance Review is copied so the team can start the analysis. The financial team will provide a response by email.",
+    "attachments": []
+  },
+  {
+    "document_id": "email_msg_011",
+    "email_id": "email.mock_ana_003",
+    "thread_id": "email_thread_ana_001",
+    "source": "email",
+    "channel": "email",
+    "direction": "inbound",
+    "contact_name": "Ana Ribeiro",
+    "contact_email": "ana.ribeiro@example.com",
+    "sender_type": "customer",
+    "sender_name": "Ana Ribeiro",
+    "sender_email": "ana.ribeiro@example.com",
+    "receiver_type": "business",
+    "receiver_name": "Evviva Support",
+    "receiver_email": "support@evviva.com",
+    "cc": [
+      {
+        "name": "Patrícia Lima",
+        "email": "patricia.lima@example.com",
+        "role": "accounting_contact"
+      }
+    ],
+    "bcc": [],
+    "timestamp": "2026-04-24T11:49:00-03:00",
+    "subject": "Re: Duplicate charge review opened",
+    "body": "Thank you for opening the review request. I am copying Patrícia from accounting so she can follow the case as well. Please confirm whether I need to send any additional document or if the payment receipt and screenshot are enough for the financial team to analyze the duplicate charge.",
+    "attachments": []
+  },
+  {
+    "document_id": "email_msg_012",
+    "email_id": "email.mock_ana_004",
+    "thread_id": "email_thread_ana_001",
+    "source": "email",
+    "channel": "email",
+    "direction": "outbound",
+    "contact_name": "Ana Ribeiro",
+    "contact_email": "ana.ribeiro@example.com",
+    "sender_type": "business",
+    "sender_name": "Evviva Support",
+    "sender_email": "support@evviva.com",
+    "receiver_type": "customer",
+    "receiver_name": "Ana Ribeiro",
+    "receiver_email": "ana.ribeiro@example.com",
+    "cc": [
+      {
+        "name": "Refund Operations",
+        "email": "refund.operations@evviva.com",
+        "role": "internal_refund_team"
+      }
+    ],
+    "bcc": [],
+    "timestamp": "2026-04-24T12:07:00-03:00",
+    "subject": "Re: Duplicate charge review opened",
+    "body": "Ana, for now the payment receipt and screenshot are enough for the financial team to start the analysis. Refund Operations is copied for awareness. If the team needs additional evidence, we will contact you through this same email thread. Please keep the protocol number EVV-2026-00087 for future reference.",
+    "attachments": []
+  },
+  {
+    "document_id": "email_msg_013",
+    "email_id": "email.mock_carlos_001",
+    "thread_id": "email_thread_carlos_001",
+    "source": "email",
+    "channel": "email",
+    "direction": "outbound",
+    "contact_name": "Carlos Mendes",
+    "contact_email": "carlos.mendes@example.com",
+    "sender_type": "business",
+    "sender_name": "Evviva Contracts",
+    "sender_email": "contracts@evviva.com",
+    "receiver_type": "customer",
+    "receiver_name": "Carlos Mendes",
+    "receiver_email": "carlos.mendes@example.com",
+    "cc": [
+      {
+        "name": "Legal Operations",
+        "email": "legal.operations@evviva.com",
+        "role": "internal_legal_team"
+      }
+    ],
+    "bcc": [],
+    "timestamp": "2026-04-23T15:30:00-03:00",
+    "subject": "Contract signature request",
+    "body": "Hello, Carlos. Your contract is ready for signature. Legal Operations is copied for tracking. Please use the secure digital signature link provided below to complete the process. After signing, the contract status should be updated automatically in our system. If you experience any issue with the link, please contact us.",
+    "attachments": [
+      {
+        "file_name": "contract_signature_instructions_carlos.pdf",
+        "file_type": "pdf",
+        "description": "Instructions for digital signature"
+      }
+    ]
+  },
+  {
+    "document_id": "email_msg_014",
+    "email_id": "email.mock_carlos_002",
+    "thread_id": "email_thread_carlos_001",
+    "source": "email",
+    "channel": "email",
+    "direction": "inbound",
+    "contact_name": "Carlos Mendes",
+    "contact_email": "carlos.mendes@example.com",
+    "sender_type": "customer",
+    "sender_name": "Carlos Mendes",
+    "sender_email": "carlos.mendes@example.com",
+    "receiver_type": "business",
+    "receiver_name": "Evviva Contracts",
+    "receiver_email": "contracts@evviva.com",
+    "cc": [
+      {
+        "name": "Renata Mendes",
+        "email": "renata.mendes@example.com",
+        "role": "legal_representative"
+      }
+    ],
+    "bcc": [],
+    "timestamp": "2026-04-24T13:52:00-03:00",
+    "subject": "Re: Contract signature request",
+    "body": "Hello. I signed the contract yesterday using the digital link. I am copying Renata because she helps me review the contract documents. After signing, the page displayed a success message, but I did not receive a confirmation email. Could you please confirm whether my signature was recorded correctly?",
+    "attachments": []
+  },
+  {
+    "document_id": "email_msg_015",
+    "email_id": "email.mock_carlos_003",
+    "thread_id": "email_thread_carlos_001",
+    "source": "email",
+    "channel": "email",
+    "direction": "outbound",
+    "contact_name": "Carlos Mendes",
+    "contact_email": "carlos.mendes@example.com",
+    "sender_type": "business",
+    "sender_name": "Evviva Contracts",
+    "sender_email": "contracts@evviva.com",
+    "receiver_type": "customer",
+    "receiver_name": "Carlos Mendes",
+    "receiver_email": "carlos.mendes@example.com",
+    "cc": [
+      {
+        "name": "Contract Archive",
+        "email": "contract.archive@evviva.com",
+        "role": "internal_archive_team"
+      }
+    ],
+    "bcc": [],
+    "timestamp": "2026-04-24T14:05:00-03:00",
+    "subject": "Contract signature confirmed",
+    "body": "Hello, Carlos. We confirm that your digital signature was recorded successfully on April 23 at 5:48 PM. Contract Archive is copied to keep the signed status registered. The pending signature notification you received was sent before the system status was updated. No additional signature is required at this time.",
+    "attachments": []
+  },
+  {
+    "document_id": "email_msg_016",
+    "email_id": "email.mock_carlos_004",
+    "thread_id": "email_thread_carlos_001",
+    "source": "email",
+    "channel": "email",
+    "direction": "inbound",
+    "contact_name": "Carlos Mendes",
+    "contact_email": "carlos.mendes@example.com",
+    "sender_type": "customer",
+    "sender_name": "Carlos Mendes",
+    "sender_email": "carlos.mendes@example.com",
+    "receiver_type": "business",
+    "receiver_name": "Evviva Contracts",
+    "receiver_email": "contracts@evviva.com",
+    "cc": [
+      {
+        "name": "Renata Mendes",
+        "email": "renata.mendes@example.com",
+        "role": "legal_representative"
+      },
+      {
+        "name": "Felipe Mendes",
+        "email": "felipe.mendes@example.com",
+        "role": "document_recipient"
+      }
+    ],
+    "bcc": [],
+    "timestamp": "2026-04-24T14:14:00-03:00",
+    "subject": "Re: Contract signature confirmed",
+    "body": "Thank you for confirming. I am copying Renata and Felipe because they also need access to the final signed contract. Please send me a copy of the signed contract or let me know where I can download the final version. I would like to keep the document for my records.",
+    "attachments": []
+  }
+]
