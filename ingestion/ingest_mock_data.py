@@ -15,6 +15,20 @@ WHATSAPP_FILE = BASE_DIR / "mock_data" / "whatsapp_messages.json"
 EMAILS_FILE = BASE_DIR / "mock_data" / "emails.json"
 
 
+def build_deterministic_point_id(metadata: dict) -> str:
+    """
+    Creates a stable UUID based on the document_id.
+
+    This prevents duplicate points when the same mock data is ingested multiple times.
+    """
+    document_id = metadata.get("document_id")
+
+    if not document_id:
+        raise ValueError("Document metadata must contain a document_id.")
+
+    return str(uuid.uuid5(uuid.NAMESPACE_DNS, document_id))
+
+
 def build_point(document: dict, embedding_service: EmbeddingService) -> models.PointStruct:
     text = document["text"]
     metadata = document["metadata"]
@@ -24,7 +38,7 @@ def build_point(document: dict, embedding_service: EmbeddingService) -> models.P
     )
 
     return models.PointStruct(
-        id=str(uuid.uuid4()),
+        id=build_deterministic_point_id(metadata),
         vector={
             "dense": dense_embedding,
             "sparse": sparse_embedding,
