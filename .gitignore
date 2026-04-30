@@ -11,3 +11,4 @@ storage/qdrant/
 
 .DS_Store
 .vscode/
+project_doc.md
