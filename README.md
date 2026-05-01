@@ -151,6 +151,17 @@ To run in the background:
 ```bash
 docker compose up -d --build
 ```
+To run Qdrant ingestion:
+```bash
+docker compose exec api uv run python -m ingestion.reset_collection
+docker compose exec api uv run python -m ingestion.create_indexes
+docker compose exec api uv run python -m ingestion.ingest_mock_data
+docker compose exec api uv run python -m ingestion.check_collection
+```
+to run Qdrant ingestion using a single file:
+```bash
+docker compose exec api uv run python -m ingestion.bootstrap
+```
 
 To stop:
 
