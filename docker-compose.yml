@@ -8,8 +8,11 @@ services:
       - .:/app
     env_file:
       - .env
+    environment:
+      QDRANT_URL: http://qdrant:6333
     depends_on:
       - qdrant
+    command: uv run uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
 
   qdrant:
     image: qdrant/qdrant:latest
@@ -19,3 +22,18 @@ services:
       - "6334:6334"
     volumes:
       - ./storage/qdrant:/qdrant/storage
+
+  frontend:
+    build: .
+    container_name: evviva-frontend
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    environment:
+      EVVIVA_API_URL: http://api:8000
+    depends_on:
+      - api
+    command: uv run streamlit run frontend/app.py --server.address 0.0.0.0 --server.port 8501

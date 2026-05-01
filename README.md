@@ -1,16 +1,31 @@
 # Evviva
 
-MVP RAG backend for querying mocked WhatsApp and email data using FastAPI, Qdrant, FastEmbed, OpenAI, Docker, and uv.
+MVP RAG application for querying mocked WhatsApp and email conversations using FastAPI, Qdrant, FastEmbed, OpenAI, Docker, Streamlit, and uv.
+
+![Evviva Assistant](frontend/image/evviva.png)
+
+Evviva is a customer intelligence assistant that uses **hybrid Retrieval-Augmented Generation** to answer business questions based on customer interactions.
+
+The current MVP ingests mocked WhatsApp and email records, stores them in Qdrant, retrieves the most relevant records using hybrid search, and generates traceable answers with OpenAI.
+
+The retrieval strategy combines:
+
+- **Dense search** for semantic understanding;
+- **Sparse search** for keyword and exact-term matching;
+- **ColBERT reranking** to improve the final ranking of retrieved records.
+
+This hybrid RAG approach improves search quality because it can find both meaning-based matches and exact references such as customer names, subjects, document IDs, protocols, or specific business terms.
 
 ## Stack
 
-* Python 3.13
-* FastAPI
-* Qdrant
-* FastEmbed
-* OpenAI
-* Docker
-* uv
+- Python 3.13
+- FastAPI
+- Streamlit
+- Qdrant
+- FastEmbed
+- OpenAI
+- Docker
+- uv
 
 ## Project structure
 
@@ -22,6 +37,10 @@ evviva/
 │   ├── routers/
 │   ├── services/
 │   └── main.py
+├── frontend/
+│   ├── app.py
+│   └── image/
+│       └── evviva.png
 ├── ingestion/
 │   ├── loaders/
 │   ├── mock_data/
@@ -60,6 +79,7 @@ uv run uvicorn api.main:app --reload
 Useful URLs:
 
 ```text
+Frontend: http://localhost:8501
 API docs: http://localhost:8000/docs
 Health:   http://localhost:8000
 Qdrant:   http://localhost:6333/dashboard
