@@ -19,5 +19,19 @@ class Settings(BaseSettings):
     sparse_model: str = "Qdrant/bm25"
     colbert_model: str = "colbert-ir/colbertv2.0"
 
+    imap_enabled: bool = False
+    imap_host: str = "imap.gmail.com"
+    imap_port: int = 993
+    imap_use_ssl: bool = True
+    imap_user: str | None = None
+    imap_password: str | None = None
+    imap_mailbox: str = "INBOX"
+    imap_search_criteria: str = 'X-GM-RAW "in:inbox category:primary"'
+    imap_max_emails: int = 10
+    imap_save_attachments: bool = True
+    imap_attachments_dir: str = "storage/email_attachments"
+
+    chilkat_license_key: str | None = None
+
 
 settings = Settings()

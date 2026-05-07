@@ -150,6 +150,35 @@ wheels = [
 ]
 
 [[package]]
+name = "chilkat2"
+version = "11.4.0"
+source = { registry = "https://pypi.org/simple" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/d5/26/90d46cf2c8552e373c732e8f3334cd3e25834562bb88d887094866b5333d/chilkat2-11.4.0-cp313-cp313-macosx_10_14_x86_64.whl", hash = "sha256:88aca0d57eab1a5696ade312536b73bf41b8c744120f855ad98d51c6b92db6b5", size = 6505564, upload-time = "2026-03-31T10:46:31.542Z" },
+    { url = "https://files.pythonhosted.org/packages/49/31/0856edb32a4523581835b46a2ff8b9bc2f4395d161bd1c09489b57a270b0/chilkat2-11.4.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:0b7a92587a439f141d0a070b868f93e6ae1701d08ba7c4195bb798f37495cb5d", size = 5926077, upload-time = "2026-03-31T10:46:33.98Z" },
+    { url = "https://files.pythonhosted.org/packages/12/8a/6fd592d2c1441b033e89be73e96ff52d3bb2c4322f7819b675e3e704df9a/chilkat2-11.4.0-cp313-cp313-manylinux2010_i686.whl", hash = "sha256:908792df64b6643261ec817eaa8d2a7447b852a87ec00c544ec74fbc4cb23252", size = 6690044, upload-time = "2026-03-31T10:46:36.476Z" },
+    { url = "https://files.pythonhosted.org/packages/f5/cc/6c41b121c09d6af2a07c7489f781d5e9682e33832fe0a9f7c57e8acb0325/chilkat2-11.4.0-cp313-cp313-manylinux2010_x86_64.whl", hash = "sha256:67e6ed56bed50aec318ac3ef55dba954552d933a11af37bb458a499d90ecec01", size = 6418619, upload-time = "2026-03-31T10:46:38.904Z" },
+    { url = "https://files.pythonhosted.org/packages/22/63/703c5773bf12732424dcf038f32cf4c3f99288d0f98a6b6066f81c579951/chilkat2-11.4.0-cp313-cp313-manylinux2014_aarch64.whl", hash = "sha256:18914fcc3cab1a4a74d4abc2480c8f0f31461ae49e4105bb2347e01d88ea419e", size = 6184983, upload-time = "2026-03-31T10:46:41.703Z" },
+    { url = "https://files.pythonhosted.org/packages/2e/47/93f485a8ea73fd1c8886154ee281c645a7e7da3ad3d2d15404ec86836fbc/chilkat2-11.4.0-cp313-cp313-manylinux2014_armv7l.whl", hash = "sha256:132b7f6da9edabf534fce74b4616df308b2b01f8e1251927cd19e32fc0268736", size = 5669560, upload-time = "2026-03-31T10:46:44.083Z" },
+    { url = "https://files.pythonhosted.org/packages/e4/4a/acb9bc12c871b8b8504c8069a96f8cdf7e1103f72779eb9a4688676df8c8/chilkat2-11.4.0-cp313-cp313-musllinux_1_1_i686.whl", hash = "sha256:dfacccea78a8106c432f75a8162a5615b0a3453b617f8a4f3a3402fce2e648ea", size = 7138067, upload-time = "2026-03-31T10:46:46.647Z" },
+    { url = "https://files.pythonhosted.org/packages/90/d2/91608060f2e6ad4bc6b2dc3cba5352b7d5c42431cd8fb21281fa8550094e/chilkat2-11.4.0-cp313-cp313-musllinux_1_1_x86_64.whl", hash = "sha256:f2aa53109f0e9dda5a57a88de756d667671378283e5b4abf544524553a41bde7", size = 6877398, upload-time = "2026-03-31T10:46:49.247Z" },
+    { url = "https://files.pythonhosted.org/packages/59/e9/f8d5df4b6b10cddea8ff1b4e18b338c1bfce605db4162ef40fd200268cf9/chilkat2-11.4.0-cp313-cp313-musllinux_1_2_aarch64.whl", hash = "sha256:c2ca9a601737f102aee1b235166cf4bb943c38068f8c1feefddd653e6fccd9e8", size = 6254577, upload-time = "2026-03-31T10:46:51.701Z" },
+    { url = "https://files.pythonhosted.org/packages/88/cb/659f57601859b1616f28bf47758327f9874a367a87b7d6285d4919584b3c/chilkat2-11.4.0-cp313-cp313-musllinux_1_2_armv7l.whl", hash = "sha256:af4f2616211611eac218f53b72672b2459dff1b55439f7c09dae7c45d97ea760", size = 6413269, upload-time = "2026-03-31T10:46:54.722Z" },
+    { url = "https://files.pythonhosted.org/packages/f2/d1/c9ebcbb466df61e3c7e71a5c153a9aedfffff28f20f9e795ba0b5c41c53c/chilkat2-11.4.0-cp313-cp313-win_amd64.whl", hash = "sha256:066c9b8a9e44c0f9f378ff9648106e8645f41454078c5d59481169b492ef7fa2", size = 5798508, upload-time = "2026-03-31T10:46:57.025Z" },
+    { url = "https://files.pythonhosted.org/packages/8a/8e/e7a8a719bf667e8d5223cab33ad414f63fc350962a4802c744b1fbd7d2f3/chilkat2-11.4.0-cp314-cp314-macosx_10_14_x86_64.whl", hash = "sha256:21841ae31cd04b18ca1e2eacafa21e64c332f34ee1598954e8efa24137f93533", size = 6505813, upload-time = "2026-03-31T10:46:59.743Z" },
+    { url = "https://files.pythonhosted.org/packages/fb/7e/462ad5805efdf4a4c05445bd14de1721ffbab85c59714cf8262483bfcf1f/chilkat2-11.4.0-cp314-cp314-macosx_11_0_arm64.whl", hash = "sha256:8faa819496b92e6b8bbfb1f3869400453bd318dafa81881db6b212849a8377b7", size = 5926186, upload-time = "2026-03-31T10:47:02.023Z" },
+    { url = "https://files.pythonhosted.org/packages/de/4b/6193f54b8552721e93089c3c115a0762384c42c1f7818993092863a53196/chilkat2-11.4.0-cp314-cp314-manylinux2010_i686.whl", hash = "sha256:7445403364e3d357f877b5662b99510b0120259303efb37ff71012e95aecbce6", size = 6690044, upload-time = "2026-03-31T10:47:04.548Z" },
+    { url = "https://files.pythonhosted.org/packages/0c/7e/b744af5bb1b995a529bf598e65792439e7c340c5a664dc5aac4cc1140e5d/chilkat2-11.4.0-cp314-cp314-manylinux2010_x86_64.whl", hash = "sha256:bb141552ff3573b31f8475ae8f11379fc660bbece9ed4be1633cf046024ac6aa", size = 6418619, upload-time = "2026-03-31T10:47:07.303Z" },
+    { url = "https://files.pythonhosted.org/packages/7f/95/e88ca6cc1f0d2ce6ced6a8b872bf9ba3d53a1660484c51aaa6211f0f21e9/chilkat2-11.4.0-cp314-cp314-manylinux2014_aarch64.whl", hash = "sha256:6f3b03b451948dcdb856daa04a1b521e20f60dfbe38559d250cad4b60428b4dc", size = 6184984, upload-time = "2026-03-31T10:47:09.743Z" },
+    { url = "https://files.pythonhosted.org/packages/d1/3e/5b1483262bc0f171197c8882ef6689a1a62d93f6d603c47917efd70e6436/chilkat2-11.4.0-cp314-cp314-manylinux2014_armv7l.whl", hash = "sha256:8b7886bfc3286cf0c6dd53dead6d0c47085c7cad6463a8d6c7fe11c7ad2e45a3", size = 5669562, upload-time = "2026-03-31T10:47:12.445Z" },
+    { url = "https://files.pythonhosted.org/packages/2a/2f/97da22a5a1f8556055f8ef3adefe324a31ba5809ec48f3cc0d3e4e45f40c/chilkat2-11.4.0-cp314-cp314-musllinux_1_1_i686.whl", hash = "sha256:14092c9d303151d4346c4035566403fd2e760798a8acc2db888f94c737edb0f9", size = 7138021, upload-time = "2026-03-31T10:47:15.128Z" },
+    { url = "https://files.pythonhosted.org/packages/d8/58/51b2d2da6a38451772428dbd5b6bfbcd4873fb28f5a02aa694bc343ee04d/chilkat2-11.4.0-cp314-cp314-musllinux_1_1_x86_64.whl", hash = "sha256:b40d7a6ab1142e8ffe8eeb60598397deaae06f8ed22034c9bd4e34e7f79e2825", size = 6876597, upload-time = "2026-03-31T10:47:17.989Z" },
+    { url = "https://files.pythonhosted.org/packages/39/a7/31e7fd499e2d353f4e978f2fd69bcab5b816f9081693dddbdd0315bf41c7/chilkat2-11.4.0-cp314-cp314-musllinux_1_2_aarch64.whl", hash = "sha256:fab02d948dd3c78057fae8bf98f9d390212aa28dd25b784ad0414c12248be4b2", size = 6255430, upload-time = "2026-03-31T10:47:20.549Z" },
+    { url = "https://files.pythonhosted.org/packages/85/bb/5049ebc4c8f5ffc4ef80e0efa2617dbe3fe8112299a9dd70ab5f5d3ba620/chilkat2-11.4.0-cp314-cp314-musllinux_1_2_armv7l.whl", hash = "sha256:c8771b218fefccee1e8ba52205232a42bdfab772830e171b7bb01e73e5165617", size = 6412758, upload-time = "2026-03-31T10:47:23.116Z" },
+    { url = "https://files.pythonhosted.org/packages/b5/9d/74052890eb52a95ea22254ec34fb874d5d3a0863bd13f1fb1f88373ceb21/chilkat2-11.4.0-cp314-cp314-win_amd64.whl", hash = "sha256:0f61c52e347bc8fcd2a9a630e3cb6f97565c710baea7bc648545c41ea953dedc", size = 5798147, upload-time = "2026-03-31T10:47:25.433Z" },
+]
+
+[[package]]
 name = "click"
 version = "8.3.3"
 source = { registry = "https://pypi.org/simple" }
@@ -184,6 +213,7 @@ name = "evviva"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "chilkat2" },
     { name = "fastapi" },
     { name = "fastembed" },
     { name = "openai" },
@@ -205,6 +235,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+    { name = "chilkat2", specifier = ">=11.4.0" },
     { name = "fastapi", specifier = ">=0.115.0" },
     { name = "fastembed", specifier = ">=0.6.0" },
     { name = "openai", specifier = ">=1.0.0" },

@@ -1,0 +1,73 @@
+[
+  {
+    "uid": 13,
+    "document_id": "gmail_imap_13",
+    "source": "email",
+    "channel": "email",
+    "mailbox": "INBOX",
+    "subject": "Follow UP Sales",
+    "from": [
+      {
+        "name": "Val Araújo",
+        "email": "val.worldminas@gmail.com"
+      }
+    ],
+    "to": [
+      {
+        "name": "evvivaaisystems@gmail.com",
+        "email": "evvivaaisystems@gmail.com"
+      }
+    ],
+    "cc": [],
+    "bcc": [],
+    "date": "Wed, 06 May 2026 18:09:35 -0300",
+    "message_id": "<CABoHKNncWf2N4v37_TQ3_fqfNR0_G324qU6yTEgF4sNd+TmR2g@mail.gmail.com>",
+    "reply_to": [],
+    "attachments": [],
+    "has_attachments": false,
+    "body_preview": "Dear Vitório\r\n\r\nI hope you are doing well.\r\n\r\nI would like to confirm the details we discussed regarding the trip to\r\nMexico City and the number of sales related to this business.\r\n\r\nCould you please send me the final sales figures and any pending\r\ninformation about the trip?\r\n\r\nBest regards,\r\nVal Barbosa",
+    "plain_body": "Dear Vitório\r\n\r\nI hope you are doing well.\r\n\r\nI would like to confirm the details we discussed regarding the trip to\r\nMexico City and the number of sales related to this business.\r\n\r\nCould you please send me the final sales figures and any pending\r\ninformation about the trip?\r\n\r\nBest regards,\r\nVal Barbosa",
+    "html_body": "<div dir=\"auto\">Dear Vitório <div dir=\"auto\"><br></div><div dir=\"auto\">I hope you are doing well.</div><div dir=\"auto\"><br></div><div dir=\"auto\">I would like to confirm the details we discussed regarding the trip to Mexico City and the number of sales related to this business.</div><div dir=\"auto\"><br></div><div dir=\"auto\">Could you please send me the final sales figures and any pending information about the trip?</div><div dir=\"auto\"><br></div><div dir=\"auto\">Best regards,</div><div dir=\"auto\">Val Barbosa</div></div>"
+  },
+  {
+    "uid": 12,
+    "document_id": "gmail_imap_12",
+    "source": "email",
+    "channel": "email",
+    "mailbox": "INBOX",
+    "subject": "Follow-up on Pending Documents",
+    "from": [
+      {
+        "name": "Val Araújo",
+        "email": "val.spminas@gmail.com"
+      }
+    ],
+    "to": [
+      {
+        "name": "",
+        "email": "evvivaaisystems@gmail.com"
+      }
+    ],
+    "cc": [
+      {
+        "name": "",
+        "email": "val.worldminas@gmail.com"
+      }
+    ],
+    "bcc": [],
+    "date": "Wed, 06 May 2026 18:04:41 -0300",
+    "message_id": "<CAFGfTKRVEjaBuX=vmhY1UqnA6bn6=gWJpmpc9cxywwJyqv5i2A@mail.gmail.com>",
+    "reply_to": [],
+    "attachments": [
+      {
+        "file_name": "evviva.png",
+        "content_type": "image/png",
+        "size_bytes": 143630
+      }
+    ],
+    "has_attachments": true,
+    "body_preview": "Dear,\r\n\r\nI hope you are doing well.\r\n\r\nI would like to confirm whether you have already sent me the protocol\r\nnumber, the contract, and any other pending documents related to the deal.\r\n\r\nPlease let me know if there is anything else I should review or provide.\r\n\r\nBest regards,\r\nVal Araújo",
+    "plain_body": "Dear,\r\n\r\nI hope you are doing well.\r\n\r\nI would like to confirm whether you have already sent me the protocol\r\nnumber, the contract, and any other pending documents related to the deal.\r\n\r\nPlease let me know if there is anything else I should review or provide.\r\n\r\nBest regards,\r\nVal Araújo",
+    "html_body": "<div dir=\"ltr\"><p>Dear,</p><p>I hope you are doing well.</p><p>I would like to confirm whether you have already sent me the protocol number, the contract, and any other pending documents related to the deal.</p><p>Please let me know if there is anything else I should review or provide.</p><p>Best regards,<br>Val Araújo</p></div>"
+  }
+]
