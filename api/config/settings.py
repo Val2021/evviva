@@ -33,5 +33,11 @@ class Settings(BaseSettings):
 
     chilkat_license_key: str | None = None
 
+    postgres_db: str = "evviva"
+    postgres_user: str = "evviva"
+    postgres_password: str = "evviva_password"
+    postgres_host: str = "localhost"
+    postgres_port: int = 5432
+
 
 settings = Settings()

@@ -12,3 +12,13 @@ storage/qdrant/
 .DS_Store
 .vscode/
 project_doc.md
+
+# Runtime storage
+storage/postgres/
+storage/qdrant/
+storage/imap_debug/
+
+# Python
+.venv/
+__pycache__/
+*.pyc

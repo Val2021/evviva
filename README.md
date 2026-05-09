@@ -21,40 +21,41 @@ This hybrid RAG approach improves search quality because it can find both meanin
 - Python 3.13
 - FastAPI
 - Streamlit
+- PostgreSQL
 - Qdrant
 - FastEmbed
 - OpenAI
+- Chilkat
 - Docker
 - uv
 
 ## Project structure
 
 ```text
-evviva/
-├── api/
-│   ├── config/
-│   ├── models/
-│   ├── routers/
-│   ├── services/
-│   └── main.py
-├── frontend/
-│   ├── app.py
-│   └── image/
-│       └── evviva.png
-├── ingestion/
-│   ├── loaders/
-│   ├── mock_data/
-│   ├── create_collection.py
-│   ├── create_indexes.py
-│   ├── reset_collection.py
-│   ├── ingest_mock_data.py
-│   └── check_collection.py
-├── storage/qdrant/
-├── docker-compose.yml
-├── Dockerfile
-├── pyproject.toml
-├── uv.lock
-└── README.md
+Gmail IMAP via Chilkat
+        ↓
+PostgreSQL staging
+        ↓
+email_messages
+        ↓
+email_chunks
+        ↓
+Embeddings
+        ↓
+Qdrant
+
+Mock WhatsApp JSON
+        ↓
+Embeddings
+        ↓
+Qdrant
+
+Qdrant
+        ↓
+FastAPI /search and /rag
+        ↓
+Streamlit frontend
+
 ```
 
 ## Environment variables
@@ -105,21 +106,6 @@ uv run python -m ingestion.create_indexes
 
 Creates Qdrant indexes for metadata fields used in filters, such as source, document ID, conversation ID, sender, date, and file name.
 
-### Ingest mock data
-
-```bash
-uv run python -m ingestion.ingest_mock_data
-```
-
-Loads mock WhatsApp and email JSON files, normalizes them into Markdown plus metadata, generates dense, sparse, and ColBERT embeddings, and uploads the points to Qdrant.
-
-Current mock dataset:
-
-```text
-16 WhatsApp messages
-16 email messages
-32 total Qdrant points
-```
 
 ### Check the collection
 
@@ -129,12 +115,30 @@ uv run python -m ingestion.check_collection
 
 Shows the collection status, points count, segments count, and vector configuration. After the current mock ingestion, the expected result is around 32 points.
 
+```bash
+uv run python -m ingestion.save_chilkat_emails_to_postgres
+```
+Retrieves emails from Gmail using Chilkat and saves them into PostgreSQL.
+
+```bash
+uv run python -m ingestion.create_email_chunks
+```
+Creates text chunks from the email messages stored in PostgreSQL.
+
+```bash
+uv run python -m ingestion.ingest_data
+```
+Loads mocked WhatsApp JSON records and email chunks from PostgreSQL, generates dense, sparse, and ColBERT embeddings, and uploads the points to Qdrant.
+
 ### Recommended ingestion flow
 
 ```bash
+uv run python -m ingestion.save_chilkat_emails_to_postgres
+uv run python -m ingestion.create_email_chunks
 uv run python -m ingestion.reset_collection
+uv run python -m ingestion.create_collection
 uv run python -m ingestion.create_indexes
-uv run python -m ingestion.ingest_mock_data
+uv run python -m ingestion.ingest_data
 uv run python -m ingestion.check_collection
 ```
 
@@ -153,9 +157,11 @@ docker compose up -d --build
 ```
 To run Qdrant ingestion:
 ```bash
+docker compose exec api uv run python -m ingestion.save_chilkat_emails_to_postgres
+docker compose exec api uv run python -m ingestion.create_email_chunks
 docker compose exec api uv run python -m ingestion.reset_collection
 docker compose exec api uv run python -m ingestion.create_indexes
-docker compose exec api uv run python -m ingestion.ingest_mock_data
+docker compose exec api uv run python -m ingestion.ingest_data
 docker compose exec api uv run python -m ingestion.check_collection
 ```
 to run Qdrant ingestion using a single file:

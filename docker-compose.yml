@@ -6,13 +6,14 @@ services:
       - "8000:8000"
     volumes:
       - .:/app
+      - /app/.venv
     env_file:
       - .env
     environment:
       QDRANT_URL: http://qdrant:6333
     depends_on:
       - qdrant
-    command: uv run uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
+    command: uv run python -m uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
 
   qdrant:
     image: qdrant/qdrant:latest
@@ -23,6 +24,26 @@ services:
     volumes:
       - ./storage/qdrant:/qdrant/storage
 
+  postgres:
+    image: postgres:16
+    container_name: evviva-postgres
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-evviva}
+      POSTGRES_USER: ${POSTGRES_USER:-evviva}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-evviva_password}
+    volumes:
+      - ./storage/postgres:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-evviva} -d ${POSTGRES_DB:-evviva}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
   frontend:
     build: .
     container_name: evviva-frontend
@@ -30,10 +51,11 @@ services:
       - "8501:8501"
     volumes:
       - .:/app
+      - /app/.venv
     env_file:
       - .env
     environment:
       EVVIVA_API_URL: http://api:8000
     depends_on:
       - api
-    command: uv run streamlit run frontend/app.py --server.address 0.0.0.0 --server.port 8501
+    command: uv run python -m streamlit run frontend/app.py --server.address 0.0.0.0 --server.port 8501

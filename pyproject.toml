@@ -17,6 +17,7 @@ dependencies = [
     "streamlit>=1.57.0",
     "requests>=2.33.1",
     "chilkat2>=11.4.0",
+    "psycopg[binary]>=3.3.4",
 ]
 
 [project.optional-dependencies]
