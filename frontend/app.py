@@ -13,130 +13,207 @@ st.set_page_config(
     page_title="Evviva Assistant",
     page_icon="💬",
     layout="wide",
+    initial_sidebar_state="collapsed",
 )
 
 
 def apply_custom_css() -> None:
     st.markdown(
         """
-        <style>
-            .main {
-                background-color: #ffffff;
-            }
+<style>
+    header[data-testid="stHeader"] {
+        display: none !important;
+        height: 0 !important;
+    }
 
-            .block-container {
-                padding-top: 1.2rem;
-                padding-bottom: 1.5rem;
-                max-width: 1350px;
-            }
+    .main {
+        background-color: #ffffff;
+    }
 
-            h1 {
-                font-size: 40px !important;
-                line-height: 1.1 !important;
-                color: #020617;
-            }
+    .block-container {
+        padding-top: 0 !important;
+        padding-bottom: 1rem;
+        max-width: 980px;
+    }
 
-            h2 {
-                font-size: 26px !important;
-                color: #0f172a;
-            }
+    h1 {
+        font-size: 32px !important;
+        line-height: 1.05 !important;
+        color: #020617;
+    }
 
-            h3 {
-                font-size: 22px !important;
-                color: #0f172a;
-            }
+    h2 {
+        font-size: 21px !important;
+        color: #0f172a;
+    }
 
-            p, label, div, span {
-                font-size: 15px;
-            }
+    h3 {
+        font-size: 18px !important;
+        color: #0f172a;
+    }
 
-            section[data-testid="stSidebar"] {
-                background-color: #f8fafc;
-                border-right: 1px solid #e2e8f0;
-            }
+    p, label, div, span {
+        font-size: 14px;
+    }
 
-            section[data-testid="stSidebar"] h1,
-            section[data-testid="stSidebar"] h2,
-            section[data-testid="stSidebar"] h3 {
-                color: #0f172a;
-            }
+    section[data-testid="stSidebar"] {
+        display: none !important;
+    }
 
-            section[data-testid="stSidebar"] h2 {
-                font-size: 24px !important;
-                line-height: 1.15 !important;
-            }
+    div[data-testid="collapsedControl"] {
+        display: none !important;
+    }
 
-            .stButton > button {
-                min-height: 44px;
-                font-size: 15px;
-                border-radius: 11px;
-                padding: 8px 16px;
-            }
+    .evviva-navbar {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        margin-top: 0;
+        margin-bottom: 14px;
+        background: #dcfce7;
+        border-bottom: 1px solid #86efac;
+        padding: 0 24px;
+        box-sizing: border-box;
+    }
 
-            .stTextArea textarea {
-                font-size: 16px !important;
-                min-height: 95px !important;
-                border-radius: 14px !important;
-            }
+    .evviva-navbar-content {
+        width: 100%;
+        max-width: 980px;
+        min-height: 48px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 34px;
+        box-sizing: border-box;
+    }
 
-            .stSelectbox div[data-baseweb="select"] {
-                font-size: 15px;
-            }
+    .evviva-navbar-brand {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 17px !important;
+        font-weight: 900 !important;
+        color: #15803d !important;
+        line-height: 1.1 !important;
+        white-space: nowrap;
+    }
 
-            .value-card {
-                background-color: #f8fafc;
-                border: 1px solid #e2e8f0;
-                border-radius: 18px;
-                padding: 22px;
-                min-height: 125px;
-                box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
-            }
+    .evviva-navbar-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 26px;
+        flex-wrap: nowrap;
+    }
 
-            .value-card-title {
-                font-size: 20px;
-                font-weight: 800;
-                color: #0f172a;
-                margin-bottom: 8px;
-            }
+    .evviva-navbar-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px !important;
+        font-weight: 800 !important;
+        color: #0f172a !important;
+        line-height: 1.1 !important;
+        white-space: nowrap;
+        text-decoration: none;
+    }
 
-            .value-card-text {
-                font-size: 17px;
-                color: #334155;
-                line-height: 1.55;
-            }
+    .stTextArea {
+        margin-top: 0 !important;
+    }
 
-            .answer-card {
-                background-color: #ecfdf5;
-                border: 1px solid #bbf7d0;
-                border-radius: 18px;
-                padding: 20px;
-                color: #064e3b;
-                font-size: 16px;
-                line-height: 1.6;
-                box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
-            }
+    .stTextArea textarea {
+        font-size: 15px !important;
+        min-height: 76px !important;
+        border-radius: 12px !important;
+        background-color: #ecfdf5 !important;
+    }
 
-            .section-description {
-                font-size: 16px;
-                color: #475569;
-                line-height: 1.5;
-                margin-bottom: 18px;
-            }
+    .stTextArea label {
+        font-size: 16px !important;
+        font-weight: 900;
+        color: #0f172a;
+    }
 
-            .example-title {
-                font-size: 16px;
-                font-weight: 600;
-                color: #334155;
-                margin-bottom: 10px;
-            }
+    div[data-testid="stTextArea"] label p {
+        font-size: 16px !important;
+        font-weight: 900;
+        color: #0f172a;
+        margin-bottom: 4px !important;
+    }
 
-            div[data-testid="stExpander"] {
-                border-radius: 14px;
-                border: 1px solid #e2e8f0;
-                overflow: hidden;
-                margin-bottom: 8px;
-            }
-        </style>
+    .stButton > button {
+        min-height: 40px;
+        font-size: 14px;
+        border-radius: 10px;
+        padding: 7px 14px;
+    }
+
+    .answer-card {
+        background-color: #ecfdf5;
+        border: 1px solid #bbf7d0;
+        border-radius: 16px;
+        padding: 16px;
+        color: #064e3b;
+        font-size: 15px;
+        line-height: 1.5;
+        box-shadow: 0 6px 16px rgba(15, 23, 42, 0.04);
+    }
+
+    div[data-testid="stExpander"] {
+        border-radius: 12px;
+        border: 1px solid #e2e8f0;
+        overflow: hidden;
+        margin-bottom: 6px;
+    }
+
+    div[data-testid="stVerticalBlock"] {
+        gap: 0.5rem;
+    }
+
+    iframe[title="streamlit.components.v1.html"] {
+        display: block;
+        margin-bottom: 0 !important;
+    }
+
+    @media (max-width: 900px) {
+        .evviva-navbar-content {
+            gap: 20px;
+        }
+
+        .evviva-navbar-links {
+            gap: 16px;
+        }
+
+        .evviva-navbar-brand {
+            font-size: 15px !important;
+        }
+
+        .evviva-navbar-link {
+            font-size: 12px !important;
+        }
+    }
+</style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def render_navbar() -> None:
+    st.markdown(
+        """
+<div class="evviva-navbar">
+    <div class="evviva-navbar-content">
+        <div class="evviva-navbar-brand">Evviva AI</div>
+        <div class="evviva-navbar-links">
+            <span class="evviva-navbar-link">Assistant</span>
+            <span class="evviva-navbar-link">Customer Intelligence</span>
+            <span class="evviva-navbar-link">Email Insights</span>
+            <span class="evviva-navbar-link">RAG Search</span>
+        </div>
+    </div>
+</div>
         """,
         unsafe_allow_html=True,
     )
@@ -145,75 +222,117 @@ def apply_custom_css() -> None:
 def render_hero() -> None:
     components.html(
         """
-        <div style="background: linear-gradient(135deg, #f0fdf4 0%, #eff6ff 50%, #faf5ff 100%);
-                    border: 1px solid #e2e8f0;
-                    border-radius: 22px;
-                    padding: 24px 30px;
-                    margin-bottom: 22px;
-                    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);">
-            <div style="display: flex; align-items: center; justify-content: space-between; gap: 28px;">
-                <div style="max-width: 560px;">
-                    <div style="font-family: Arial, sans-serif;
-                                color: #16a34a;
-                                font-size: 13px;
-                                font-weight: 700;
-                                margin-bottom: 8px;">
-                        Customer Intelligence powered by AI
-                    </div>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: transparent;
+        overflow: hidden;
+    }
 
-                    <h1 style="font-family: Arial, sans-serif;
-                               font-size: 34px;
-                               line-height: 1.05;
-                               margin: 0 0 10px 0;
-                               color: #020617;">
-                        Evviva Assistant
-                    </h1>
+    .evviva-hero {
+        background: linear-gradient(135deg, #f0fdf4 0%, #eff6ff 50%, #faf5ff 100%);
+        border: 1px solid #dbeafe;
 
-                    <p style="font-family: Arial, sans-serif;
-                              font-size: 14px;
-                              color: #475569;
-                              line-height: 1.45;
-                              margin: 0;">
-                        Turn customer conversations from WhatsApp and email into clear,
-                        traceable answers in seconds.
-                    </p>
-                </div>
+        padding: 18px 28px;
+        box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
+        min-height: 132px;
+        box-sizing: border-box;
+    }
 
-                <svg width="330" height="150" viewBox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-                            <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.18"/>
-                        </filter>
-                    </defs>
+    .evviva-hero-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+    }
 
-                    <rect x="38" y="70" width="150" height="145" rx="30" fill="#ffffff" filter="url(#shadow)" />
-                    <circle cx="113" cy="125" r="34" fill="#22c55e"/>
-                    <text x="92" y="138" font-size="42" font-family="Arial" fill="#ffffff">💬</text>
-                    <rect x="74" y="175" width="78" height="13" rx="7" fill="#cbd5e1"/>
-                    <rect x="62" y="198" width="100" height="13" rx="7" fill="#e2e8f0"/>
-                    <text x="61" y="265" font-size="22" font-family="Arial" fill="#334155">WhatsApp</text>
+    .evviva-hero-copy {
+        max-width: 560px;
+    }
 
-                    <rect x="235" y="70" width="150" height="145" rx="30" fill="#ffffff" filter="url(#shadow)" />
-                    <circle cx="310" cy="125" r="34" fill="#3b82f6"/>
-                    <text x="291" y="139" font-size="42" font-family="Arial" fill="#ffffff">✉</text>
-                    <rect x="271" y="175" width="78" height="13" rx="7" fill="#cbd5e1"/>
-                    <rect x="259" y="198" width="100" height="13" rx="7" fill="#e2e8f0"/>
-                    <text x="282" y="265" font-size="22" font-family="Arial" fill="#334155">Email</text>
+    .evviva-hero-kicker {
+        color: #16a34a;
+        font-size: 12px;
+        font-weight: 800;
+        margin-bottom: 6px;
+    }
 
-                    <rect x="432" y="70" width="150" height="145" rx="30" fill="#ffffff" filter="url(#shadow)" />
-                    <circle cx="507" cy="125" r="34" fill="#8b5cf6"/>
-                    <text x="484" y="137" font-size="34" font-family="Arial" fill="#ffffff">AI</text>
-                    <rect x="468" y="175" width="78" height="13" rx="7" fill="#cbd5e1"/>
-                    <rect x="456" y="198" width="100" height="13" rx="7" fill="#e2e8f0"/>
-                    <text x="507" y="265" font-size="22" font-family="Arial" fill="#334155" text-anchor="middle">Evviva AI</text>
+    .evviva-hero-title {
+        font-size: 32px;
+        line-height: 1.05;
+        margin: 0 0 8px 0;
+        color: #020617;
+        font-weight: 900;
+    }
 
-                    <path d="M193 142 C210 142 218 142 230 142" stroke="#64748b" stroke-width="5" stroke-dasharray="8 8"/>
-                    <path d="M390 142 C407 142 415 142 427 142" stroke="#64748b" stroke-width="5" stroke-dasharray="8 8"/>
-                </svg>
-            </div>
+    .evviva-hero-text {
+        font-size: 14px;
+        color: #475569;
+        line-height: 1.4;
+        margin: 0;
+    }
+
+    .evviva-hero svg {
+        width: 280px;
+        height: 126px;
+        flex-shrink: 0;
+    }
+</style>
+</head>
+<body>
+<div class="evviva-hero">
+    <div class="evviva-hero-content">
+        <div class="evviva-hero-copy">
+            <div class="evviva-hero-kicker">Customer Intelligence powered by AI</div>
+            <div class="evviva-hero-title">Evviva Assistant</div>
+            <p class="evviva-hero-text">
+                Turn customer conversations from WhatsApp and email into clear,
+                traceable answers in seconds.
+            </p>
         </div>
+
+        <svg viewBox="0 0 620 330" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.18"/>
+                </filter>
+            </defs>
+
+            <rect x="38" y="70" width="150" height="145" rx="30" fill="#ffffff" filter="url(#shadow)" />
+            <circle cx="113" cy="125" r="34" fill="#22c55e"/>
+            <text x="92" y="138" font-size="42" font-family="Arial" fill="#ffffff">💬</text>
+            <rect x="74" y="175" width="78" height="13" rx="7" fill="#cbd5e1"/>
+            <rect x="62" y="198" width="100" height="13" rx="7" fill="#e2e8f0"/>
+            <text x="61" y="265" font-size="30" font-family="Arial" fill="#334155">WhatsApp</text>
+
+            <rect x="235" y="70" width="150" height="145" rx="30" fill="#ffffff" filter="url(#shadow)" />
+            <circle cx="310" cy="125" r="34" fill="#3b82f6"/>
+            <text x="291" y="139" font-size="42" font-family="Arial" fill="#ffffff">✉</text>
+            <rect x="271" y="175" width="78" height="13" rx="7" fill="#cbd5e1"/>
+            <rect x="259" y="198" width="100" height="13" rx="7" fill="#e2e8f0"/>
+            <text x="282" y="265" font-size="30" font-family="Arial" fill="#334155">Email</text>
+
+            <rect x="432" y="70" width="150" height="145" rx="30" fill="#ffffff" filter="url(#shadow)" />
+            <circle cx="507" cy="125" r="34" fill="#8b5cf6"/>
+            <text x="484" y="137" font-size="34" font-family="Arial" fill="#ffffff">AI</text>
+            <rect x="468" y="175" width="78" height="13" rx="7" fill="#cbd5e1"/>
+            <rect x="456" y="198" width="100" height="13" rx="7" fill="#e2e8f0"/>
+            <text x="507" y="265" font-size="30" font-family="Arial" fill="#334155" text-anchor="middle">Evviva AI</text>
+
+            <path d="M193 142 C210 142 218 142 230 142" stroke="#64748b" stroke-width="5" stroke-dasharray="8 8"/>
+            <path d="M390 142 C407 142 415 142 427 142" stroke="#64748b" stroke-width="5" stroke-dasharray="8 8"/>
+        </svg>
+    </div>
+</div>
+</body>
+</html>
         """,
-        height=190,
+        height=150,
     )
 
 
@@ -259,9 +378,14 @@ def render_sources(sources: list[dict[str, Any]]) -> None:
     for index, source in enumerate(sources, start=1):
         metadata = source.get("metadata", {})
         document_id = metadata.get("document_id", "unknown_document")
-        contact_name = metadata.get("contact_name", "unknown_customer")
+        contact_name = (
+            metadata.get("contact_name")
+            or metadata.get("sender_name")
+            or metadata.get("sender_email")
+            or "unknown_customer"
+        )
         channel = metadata.get("channel", metadata.get("source", "unknown_channel"))
-        timestamp = metadata.get("timestamp", "unknown_date")
+        timestamp = metadata.get("timestamp") or metadata.get("date") or "unknown_date"
         score = source.get("score", 0)
 
         title = f"Record {index}: {contact_name} | {channel} | confidence {score:.2f}"
@@ -287,124 +411,30 @@ def render_sources(sources: list[dict[str, Any]]) -> None:
 
 
 apply_custom_css()
+render_navbar()
 render_hero()
 
 
-with st.sidebar:
-    st.header("Assistant controls")
+limit = 5
+selected_customer = "All customers"
+selected_source = "All channels"
 
-    limit = st.slider(
-        "Records to analyze",
-        min_value=1,
-        max_value=10,
-        value=5,
-    )
-
-    selected_customer = st.selectbox(
-        "Customer scope",
-        [
-            "All customers",
-            "Mariana Costa",
-            "João Silva",
-            "Ana Ribeiro",
-            "Carlos Mendes",
-        ],
-    )
-
-    selected_source = st.selectbox(
-        "Communication channel",
-        [
-            "All channels",
-            "whatsapp",
-            "email",
-        ],
-    )
-
-
-st.markdown("## Ask a business question")
-
-st.markdown(
-    """
-    <div class="section-description">
-        Ask anything about customer conversations, pending documents, contract signatures,
-        duplicated charges, or previous support interactions.
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
-
-card_cols = st.columns(3)
-
-with card_cols[0]:
-    st.markdown(
-        """
-        <div class="value-card">
-            <div class="value-card-title">Understand customers faster</div>
-            <div class="value-card-text">
-                Find the right interaction without manually checking messages and emails.
-            </div>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-
-with card_cols[1]:
-    st.markdown(
-        """
-        <div class="value-card">
-            <div class="value-card-title">Answer with traceability</div>
-            <div class="value-card-text">
-                Every answer includes the records used as supporting evidence.
-            </div>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-
-with card_cols[2]:
-    st.markdown(
-        """
-        <div class="value-card">
-            <div class="value-card-title">Reduce operational effort</div>
-            <div class="value-card-text">
-                Support teams can quickly understand what happened in each case.
-            </div>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-
-st.markdown("<br>", unsafe_allow_html=True)
-
-st.markdown(
-    '<div class="example-title">Try one of these examples or write your own question:</div>',
-    unsafe_allow_html=True,
-)
-
-example_questions = [
-    "What happened with Carlos's contract signature?",
-    "Which customer asked about a duplicate charge?",
-    "Who needs to resend a proof of address?",
-]
-
-cols = st.columns(len(example_questions))
-
-for col, example in zip(cols, example_questions):
-    with col:
-        if st.button(example, use_container_width=True):
-            st.session_state["query"] = example
 
 if "query" not in st.session_state:
     st.session_state["query"] = ""
 
 query = st.text_area(
-    "Your question",
+    "Type your question here:",
     value=st.session_state["query"],
-    placeholder="Example: Which customer has a pending document issue?",
-    height=95,
+    placeholder="Example: What did Marco want to confirm?",
+    height=90,
 )
 
-ask_button = st.button("Ask Evviva Assistant", type="primary")
+ask_button = st.button(
+    "Ask Evviva Assistant",
+    type="primary",
+    key="ask_evviva_assistant_button",
+)
 
 if ask_button:
     if not query.strip():
