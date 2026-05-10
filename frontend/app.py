@@ -1,4 +1,5 @@
 import os
+from html import escape
 from typing import Any
 
 import requests
@@ -33,7 +34,7 @@ def apply_custom_css() -> None:
     .block-container {
         padding-top: 0 !important;
         padding-bottom: 1rem;
-        max-width: 980px;
+        max-width: 1180px;
     }
 
     h1 {
@@ -43,8 +44,10 @@ def apply_custom_css() -> None:
     }
 
     h2 {
-        font-size: 21px !important;
+        font-size: 20px !important;
         color: #0f172a;
+        margin-top: 1rem !important;
+        margin-bottom: 0.5rem !important;
     }
 
     h3 {
@@ -159,6 +162,18 @@ def apply_custom_css() -> None:
         font-size: 15px;
         line-height: 1.5;
         box-shadow: 0 6px 16px rgba(15, 23, 42, 0.04);
+        white-space: pre-wrap;
+    }
+
+    .supporting-excerpt {
+        background-color: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 14px 16px;
+        color: #0f172a;
+        font-size: 15px;
+        line-height: 1.55;
+        white-space: pre-wrap;
     }
 
     div[data-testid="stExpander"] {
@@ -237,7 +252,6 @@ def render_hero() -> None:
     .evviva-hero {
         background: linear-gradient(135deg, #f0fdf4 0%, #eff6ff 50%, #faf5ff 100%);
         border: 1px solid #dbeafe;
-
         padding: 18px 28px;
         box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
         min-height: 132px;
@@ -370,6 +384,32 @@ def build_filter(
     return filters or None
 
 
+def clean_supporting_excerpt(text: str, metadata: dict[str, Any]) -> str:
+    if not text:
+        return ""
+
+    cleaned_text = text.strip()
+
+    if "### Message" in cleaned_text:
+        cleaned_text = cleaned_text.split("### Message", 1)[1].strip()
+    elif "Email body:" in cleaned_text:
+        cleaned_text = cleaned_text.split("Email body:", 1)[1].strip()
+
+    cleaned_text = cleaned_text.replace("**", "")
+    cleaned_text = cleaned_text.replace("##", "")
+    cleaned_text = cleaned_text.replace("###", "")
+    cleaned_text = cleaned_text.strip()
+
+    if cleaned_text:
+        return cleaned_text
+
+    subject = metadata.get("subject")
+    if subject:
+        return f"Subject: {subject}"
+
+    return "No readable excerpt available."
+
+
 def render_sources(sources: list[dict[str, Any]]) -> None:
     if not sources:
         st.info("No supporting records were returned.")
@@ -396,7 +436,10 @@ def render_sources(sources: list[dict[str, Any]]) -> None:
             with col1:
                 st.write(f"**Customer:** {contact_name}")
                 st.write(f"**Channel:** {channel}")
-                st.write(f"**Direction:** {metadata.get('direction')}")
+
+                direction = metadata.get("direction")
+                if direction:
+                    st.write(f"**Direction:** {direction}")
 
             with col2:
                 st.write(f"**Record ID:** {document_id}")
@@ -406,8 +449,20 @@ def render_sources(sources: list[dict[str, Any]]) -> None:
                 if subject:
                     st.write(f"**Subject:** {subject}")
 
+            excerpt = clean_supporting_excerpt(
+                text=source.get("text") or source.get("text_preview") or "",
+                metadata=metadata,
+            )
+
             st.write("**Supporting excerpt:**")
-            st.code(source.get("text_preview", ""), language="markdown")
+            st.markdown(
+                f"""
+                <div class="supporting-excerpt">
+                    {escape(excerpt)}
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
 
 
 apply_custom_css()
@@ -455,10 +510,11 @@ if ask_button:
 
                 st.markdown("## Answer")
 
+                answer = escape(result.get("answer", ""))
                 st.markdown(
                     f"""
                     <div class="answer-card">
-                        {result.get("answer", "")}
+                        {answer}
                     </div>
                     """,
                     unsafe_allow_html=True,

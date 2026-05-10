@@ -41,7 +41,7 @@ class RAGService:
             RAGSource(
                 score=result.score,
                 metadata=result.metadata,
-                text_preview=result.text[:500],
+                text_preview=result.text[:1000],
             )
             for result in search_response.results
         ]
