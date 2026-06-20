@@ -22,3 +22,4 @@ storage/imap_debug/
 .venv/
 __pycache__/
 *.pyc
+storage/documents/

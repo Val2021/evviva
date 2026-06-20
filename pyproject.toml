@@ -18,6 +18,10 @@ dependencies = [
     "requests>=2.33.1",
     "chilkat2>=11.4.0",
     "psycopg[binary]>=3.3.4",
+    "docling>=2.93.0",
+    "hdbscan>=0.8.43",
+    "sentence-transformers>=5.5.0",
+    "transformers>=5.8.1",
 ]
 
 [project.optional-dependencies]
